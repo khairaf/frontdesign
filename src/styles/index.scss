@@ -2,6 +2,7 @@ $font-stack:    Helvetica, sans-serif;
 $primary-color: #0e1111;
 $putih: #ffffff;
 $tombol-add: #888888;
+$abu-abu: #414A4C;
 
 body {
   font: 100% $font-stack;
@@ -34,7 +35,7 @@ body {
 }
 
 .right{
-  background-color: black;
+  background-color: $primary-color;
   padding: 20px;
 }
 
@@ -48,7 +49,7 @@ body {
 .content-hitam {
   @include centerDiv();
   width: 70%; 
-  padding-top: 70px;
+  padding-top: 30px;
 }
 h1, p{
   margin-bottom: 0px;
@@ -69,7 +70,7 @@ p, span{
   margin-bottom: 30px;
   padding:10px; 
   border-radius: 10px; 
-  background-color: #414A4C;
+  background-color: $abu-abu;
   border-style: none;
 }
 
@@ -259,8 +260,7 @@ p, span{
   background-size: 300px 100px;
 }
 
-#tombol {
-  background-color: #9400D3; /* darkviolet */
+@mixin buttontombol(){
   border: none;
   color: $putih;
   padding: 8px;
@@ -274,9 +274,18 @@ p, span{
   border-radius: 15px;
   width: 45px;
   height: 45px;
+
+}
+#tombol {
+  @include buttontombol();
+  background-color: #9400D3; /* darkviolet */  
   bottom: 0;
   right: 0;
   position: fixed;  
   box-shadow: 5px 10px 8px $tombol-add;
 }
 
+#tombol-nav {
+  background-color: $abu-abu;
+  @include buttontombol();
+}
