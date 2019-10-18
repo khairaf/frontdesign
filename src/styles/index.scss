@@ -1,0 +1,282 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #0e1111;
+$putih: #ffffff;
+$tombol-add: #888888;
+
+body {
+  font: 100% $font-stack;
+  background-color: $primary-color;
+  color: $putih;
+}
+
+@mixin centerDiv(){
+  margin-left: auto;
+  margin-right: auto;
+  
+
+}
+.row {
+  display: flex;
+  height: 100vh;
+  @include centerDiv();
+}
+
+.row-kiri {
+  display: flex;
+  @include centerDiv();
+  height: fit-content;
+}
+
+.column {
+  flex: 50%;
+  padding-left: 0px;
+  height: fit-content;
+}
+
+.right{
+  background-color: black;
+  padding: 20px;
+}
+
+.left{
+  background-color: $putih;
+  margin: 3px;
+  height: 100vh;
+  border-radius: 9px;
+  padding: 20px;
+}
+.content-hitam {
+  @include centerDiv();
+  width: 70%; 
+  padding-top: 70px;
+}
+h1, p{
+  margin-bottom: 0px;
+}
+
+p, span{
+  color: #414A4C;
+}
+
+.bar {
+  width: 80%; 
+}
+
+#task{
+  color: $putih;
+  width: 100%;
+  margin-top: 30px; 
+  margin-bottom: 30px;
+  padding:10px; 
+  border-radius: 10px; 
+  background-color: #414A4C;
+  border-style: none;
+}
+
+::placeholder {
+  color: $putih;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $putih;
+}
+
+::-ms-input-placeholder {
+  color: $putih;
+}
+@media screen and (max-width: 940px) {
+  .column, .left{
+    width: 100%;
+	height: auto;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Float four columns side by side */
+.project {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row-projects {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row-projects:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 940px) {
+  .project {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  
+}
+
+.image {
+  position: relative;
+  text-align: center;
+  color: $putih;
+  margin: 0px;
+  background-size: cover;
+  width: fit-content;
+  display: inline-flex;
+  img {
+    background-color: #fadbe0;
+	width: 60px;
+	height: 60px;
+    border-radius: 15%;
+  }
+}
+
+.corner {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  height: 15px;
+  width: 15px;
+  background-color: $putih;
+  border-radius: 50%;
+ }
+  
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  h1, h3{
+  color: black;
+  }
+  p, form {
+  color: #aaaaaa;  
+  }
+}
+
+.gambar-profile{
+  img{
+    width: 20px; 
+    height: 20px;
+  }
+}
+
+.list {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 35px;
+  cursor: pointer;
+  font-size: 12px;
+  user-select: none;
+  color: #aaaaaa;
+}
+
+/* Hide the browser's default checkbox */
+.list input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: $putih;
+  border-radius: 50%;
+  border: 1px solid #aaaaaa;
+}
+
+/* On mouse-over, add a grey background color */
+.list:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.list input:checked ~ .checkmark {
+  background-color: #12af92 ;
+  border: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.list input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.list .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid $putih;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.status {
+  color:  #00008b ; /*Dark blue*/
+  margin-left: 10px;
+  padding: 3px 12px ;
+  border-radius: 500px;
+  background-color: #add8e6; /*Light blue*/
+  background-size: 300px 100px;
+}
+
+#tombol {
+  background-color: #9400D3; /* darkviolet */
+  border: none;
+  color: $putih;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 2px 30px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 45px;
+  height: 45px;
+  bottom: 0;
+  right: 0;
+  position: fixed;  
+  box-shadow: 5px 10px 8px $tombol-add;
+}
+
