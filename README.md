@@ -4,6 +4,8 @@
 
 A lightweight foundation for your next webpack based frontend project.
 
+not a pr
+
 
 ### Installation
 
